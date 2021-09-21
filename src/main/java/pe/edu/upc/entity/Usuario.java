@@ -1,6 +1,5 @@
 package pe.edu.upc.entity;
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="Motor")
+@Table (name="Usuario")
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID =1L;
@@ -18,21 +17,21 @@ public class Usuario implements Serializable {
 @GeneratedValue(strategy =GenerationType.IDENTITY)
 	private int id;
 
-@Column(name="nombreMotor", nullable=false, length = 30)
-	private String nombreMotor;
+@Column(name="nombreUsuario", nullable=false, length = 30)
+	private String nombreUsuario;
 
-	private Date fechaMotor;
+	private String clave;
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int id, String nombreMotor, Date fechaMotor) {
+	public Usuario(int id, String nombreUsuario, String clave) {
 		super();
 		this.id = id;
-		this.nombreMotor = nombreMotor;
-		this.fechaMotor = fechaMotor;
+		this.nombreUsuario = nombreUsuario;
+		this.clave = clave;
 	}
 
 	public int getId() {
@@ -43,21 +42,23 @@ public class Usuario implements Serializable {
 		this.id = id;
 	}
 
-	public String getNombreMotor() {
-		return nombreMotor;
+	public String getNombreUsuario() {
+		return nombreUsuario;
 	}
 
-	public void setNombreMotor(String nombreMotor) {
-		this.nombreMotor = nombreMotor;
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
-	public Date getFechaMotor() {
-		return fechaMotor;
+	public String getClave() {
+		return clave;
 	}
 
-	public void setFechaMotor(Date fechaMotor) {
-		this.fechaMotor = fechaMotor;
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
+
+
 
 	
 }
